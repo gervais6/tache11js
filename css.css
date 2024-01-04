@@ -1,0 +1,29 @@
+#ul{
+font-size:20px;
+list-style-type:none;
+}
+
+li{
+   border: 1px  solid rgb(233, 232, 232);
+   margin-bottom: 20px;
+   margin-left:-33px;
+   
+   height: 60px;
+   border-radius: 5px;
+   line-height: 50px;
+   padding-left: 5px;
+   word-wrap:break-word;
+  
+  
+
+}
+
+li button{
+  float: right;
+  height: 60px;
+  
+
+
+}
+
+
