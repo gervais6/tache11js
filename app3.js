@@ -1,75 +1,101 @@
-
+let input = document.getElementById('inputs');
+let ul = document.getElementById('ul');
+let toggleDark = document.getElementById('modeDark');
 let count=0;
-form.onsubmit=()=>{
-    let li = document.createElement("li");
-    let spanDel = document.createElement("span");
-    let buttonDoing = document.createElement("span");
-    let buttonDone = document.createElement("span");
-   
-  
-       spanDel.onclick=()=>del(li);
-      
-  
-    li.innerHTML = inputPassword2.value ; 
-    spanDel.innerHTML = '<button type="button" class="btn btn-danger  rounded-1">DELETE</button>';
-    buttonDone.innerHTML='<button type="button" class="btn btn-success rounded-1 me-1">DONE</button>'
-  
-  //incrementation
-  document.getElementById('ul').appendChild(li);
-  count++;
-  document.getElementById('counter').innerHTML = 'All'+' '+count;
+let body = document.querySelector('body');
+let background=document.getElementById('Todolist');
+let inputs=document.getElementById('inputs');
+let radioNoLabel1=document.getElementById('radioNoLabel1');
+let counter=document.getElementById('counter');
+let container1=document.getElementById('container1');
+let span1=document.getElementById('span1');
+
+
+
+    form.addEventListener("dblclick",function(){
+        let li =document.createElement('li');
+        let btnSupprimer =document.createElement('span');
+        let checked =document.createElement('span');
+        
+
+        btnSupprimer.onclick=()=>del(li);
+        
+        li.innerText=input.value ; 
+        btnSupprimer.innerHTML='<i class="bi bi-x-lg" ></i>'
+        checked.innerHTML='<input class="form-check-input " type="radio" name="radioNoLabel" id="radioss" value="" aria-label="...">'
+        let radioss = document.getElementById('radioss');
+        ul.appendChild(li);
+        li.appendChild(btnSupprimer);
+        li.appendChild(checked);
+
 
  
+      count++;
+      document.getElementById('items').innerHTML = count+' '+'items left';
 
- //ajouter l element creer sur ul et li 
-    ul.appendChild(li);
-    li.appendChild(spanDel);
-    li.appendChild(buttonDoing);
-    li.appendChild(buttonDone);
-    
-    inputPassword2.value="";
-
-    li.addEventListener('click', ()=>{
-        li.classList.add('textebarre');
        
+        
+        checked.addEventListener('click', ()=>{
+            li.classList.add('textebarre');
+           
+        })
+    
+    
+    
+    
+    
     })
 
+
+    function del(element){
+        element.remove();
+        count--
+        document.getElementById('items').innerHTML = count+' '+'items left';
+
+    }
     
-   
+
+    //mode dark
     
-   return false;
-}
+    modeDark.addEventListener('click',function(){
+        this.classList.toggle('bi-moon');
+           if(this.classList.toggle('bi-moon-fill')){
 
-//button supprimer 
+            body.style.background='#222937 ';
+            body.style.transition='1s';
+            background.style.backgroundImage='url("4.jpg")';
+            background.style.transition='1s';
+            body.style.color='white';
+            inputs.style.background='#222937'
+            inputs.style.color='white';
+            radioNoLabel1.style.background='#222937';
+            counter.style.background='#222937';
+            
+            container1.style.color='white';
+            span1.style.background='#222937';
+            
+            
+            
 
-function del(element){
-    element.remove();
-}
+           }else{
+            body.style.background='white';
+            body.style.transition='1s';
+            background.style.backgroundImage='url("2.jpg")';
+            background.style.transition='1s';
+            body.style.color='black';
+            inputs.style.background='white'
+            inputs.style.color='black'
+            radioNoLabel1.style.background='white'
+            counter.style.background='white'
+            counter.style.border='1px solid #CFCFD1';
+            container1.style.color='#808B96'
+            span1.style.background='white'
 
-
-
-
-
-
-//mode dark 
-const toggleDark=() => {
-    document.querySelector("body").setAttribute("data-bs-theme" , "dark");
-    document.querySelector("#toggle").setAttribute("class","bi bi-moon-fill");
-
-}
-
-
-const togglelight=() => {
-    document.querySelector("body").setAttribute("data-bs-theme" , "light");
-    document.querySelector("#toggle").setAttribute("class","bi bi-moon");
+           }
+       
+    })
     
-}
 
-
-const changesThemes= () => {
-    document.querySelector("body").getAttribute("data-bs-theme") === "light"?
-    toggleDark(): togglelight(); 
-} 
 
 
 

@@ -1,32 +1,57 @@
+
+
+#Todolist{
+  background-image: url(2.jpg);
+ 
+  height: 300px;
+}
+
+
+
+
+
+
 #ul{
-font-size:20px;
+
 list-style-type:none;
 }
 
 li{
-   border: 1px  solid rgb(233, 232, 232);
-   margin-bottom: 20px;
-   margin-left:-33px;
-   
-   height: 62px;
-   border-radius: 5px;
-   line-height: 50px;
-   padding-left: 5px;
+   border-bottom: 1px  solid#D5D8DC;
+  
+   margin-left:-31px;
+   line-height: 35px;
    word-wrap:break-word;
    cursor: pointer;
+  
+  
+   
+   
    
   
   
 
 }
 
-li button{
+.bi{
   float: right;
-  height: 60px;
+  margin-right:20px;
+  
   
 
+  }
 
-}
+
+
+
+
+  #radioss{
+    float:left;
+    margin-left:10px;
+    margin-right: 25px;
+    margin-top:10px;
+    
+  }
 
 .textebarre{
   text-decoration: line-through;
